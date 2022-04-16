@@ -16,7 +16,8 @@ class Wektor {
   public:
   float wtab [ROZMIAR];
      
-   Wektor();  
+   //Wektor();
+   Wektor(float=0, float=0, float=0); 
 };
 
 
