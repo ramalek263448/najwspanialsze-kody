@@ -18,6 +18,13 @@ class Wektor {
      
    //Wektor();
    Wektor(float=0, float=0, float=0); 
+   float operator * (Wektor) const ;
+   Wektor operator * (float) const ;
+   Wektor operator / (float) const ;
+   Wektor operator + (Wektor) const;
+   Wektor operator - (Wektor) const;
+   float operator [] (int Ind) const {return wtab[Ind - 1];}
+   float & operator [] (int Ind)  {return wtab[Ind - 1];}
 };
 
 
