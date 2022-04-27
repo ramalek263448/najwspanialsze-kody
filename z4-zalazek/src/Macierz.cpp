@@ -1,9 +1,31 @@
 #include "Macierz.hh"
 
+using namespace std;
 
-/*
- *  Tutaj nalezy zdefiniowac odpowiednie metody
- *  klasy Macierz, ktore zawieraja wiecej kodu
- *  niz dwie linijki.
- *  Mniejsze metody mozna definiwac w ciele klasy.
- */
+
+
+
+
+
+
+
+
+istream& operator >> (istream &Strm, Macierz &Mac)
+ {
+ 
+  for(int i=0; i<ROZMIAR; ++i)
+    Strm >> Mac.mtab[i];
+    
+ }   
+ 
+ 
+ 
+ostream& operator << (ostream &Strm, const Macierz &Mac)
+ {
+  
+  for(int i=0; i<ROZMIAR; ++i)
+   {
+    Strm << Mac.mtab[i];
+    Strm << endl;
+   }
+ }
