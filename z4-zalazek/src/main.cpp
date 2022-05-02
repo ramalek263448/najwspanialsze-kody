@@ -18,7 +18,7 @@ using namespace std;
 int main()
 {
   UkladRownanLiniowych   UklRown;   // To tylko przykladowe definicje zmiennej
-  Wektor W1(9,6,3);
+/***  Wektor W1(9,6,3);
   Wektor W2(2,0,1);
   Wektor W3;
   Macierz M1;
@@ -27,7 +27,7 @@ int main()
   cout << W1 <<endl;
   cout << W2 <<endl;
   cout << W3 <<endl;
-
+***/
   
 /*  cout << " W1 = W1 * W2[1] " << endl;
   W1 = W1 * W2[1];
@@ -49,12 +49,23 @@ int main()
   cout << W1 <<endl;
   cout << W2 <<endl;*/
   
+/***  cout << M1 << endl;
+  
   cin >> M1 ; 
   
   cout << M1(2,2) <<endl;
   
   cin >> M1(3,1) ;  
   
-  cout << M1 << endl;
+  cout << M1 << endl; ***/
+  
+  cin >> UklRown;
+ if (UklRown.Kalkulator() == 0)
+ {
+  cout << "Rownanie sprzeczne lub nieoznaczone" <<endl;
+  return 1;
+ }
+  cout << UklRown;
+  return 0;
  }
 
