@@ -3,10 +3,19 @@
 using namespace std;
 
 
+Macierz Macierz::Transponowanie()
+{
+ Macierz Mtemp;
 
-
-
-
+ for(int i=1; i <= ROZMIAR; ++i)
+  {
+   for (int j=1; j <= ROZMIAR; ++j)
+    {
+     Mtemp.mtab[i-1][j] = this->mtab[j-1][i];
+    }
+  } 
+  return Mtemp;
+ } 
 
 
 

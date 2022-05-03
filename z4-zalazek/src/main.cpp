@@ -65,6 +65,7 @@ int main()
   cout << "Rownanie sprzeczne lub nieoznaczone" <<endl;
   return 1;
  }
+  UklRown.WektBlad();
   cout << UklRown;
   return 0;
  }

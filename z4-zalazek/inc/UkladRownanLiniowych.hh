@@ -1,6 +1,7 @@
 #ifndef UKLADROWNANLINIOWYCH_HH
 #define UKLADROWNANLINIOWYCH_HH
 
+#include <cmath>
 #include <iostream>
 #include "Wektor.hh"
 #include "Macierz.hh"
@@ -17,10 +18,12 @@ class UkladRownanLiniowych {
    Macierz Mac;
    Wektor Wek;
    Wektor Roz;
+   Wektor Blad;
+   float DlBlad;
    
    float Gaus (Macierz);
    bool Kalkulator ();
-     
+   void WektBlad  (); 
 };
 
 

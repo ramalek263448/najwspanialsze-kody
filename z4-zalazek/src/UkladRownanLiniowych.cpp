@@ -48,6 +48,27 @@
    } 
        
  
+ 
+ void UkladRownanLiniowych::WektBlad()
+ {
+ 
+  Wektor Wtmp;
+  Macierz Mtmp;
+  
+  Mtmp = this->Mac.Transponowanie() ;
+  
+  for (int i=0; i <ROZMIAR; ++i) 
+   {
+     Wtmp[i+1] = Mtmp.mtab[i] * this->Roz;
+   }
+ 
+  this->Blad = Wtmp - this->Wek;
+  this->DlBlad = sqrt(this->Blad * this->Blad);
+ 
+ }
+ 
+ 
+ 
  istream& operator >> (istream &Strm, UkladRownanLiniowych &UklRown)
  {
  Strm >> UklRown.Mac;
@@ -64,4 +85,6 @@
   Strm << UklRow.Wek << endl;
   Strm << "Rozwiązanie x = |x1 x2 x3| " << endl;
   Strm << UklRow.Roz << endl;
+  Strm << "         Wektor Bladu Ax-b = " << UklRow.Blad << endl;
+  Strm << "Dlugosc Wektora Bladu Ax-b = " << UklRow.DlBlad << endl;
   } 

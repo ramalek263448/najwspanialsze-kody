@@ -13,6 +13,7 @@ class Macierz {
   
   Wektor mtab [ROZMIAR];
   
+  Macierz Transponowanie() ;
   float operator() (int IndW , int IndK)const { return mtab[IndW - 1][IndK]; }
   float& operator() (int IndW , int IndK) { return mtab[IndW - 1][IndK]; }
 };
