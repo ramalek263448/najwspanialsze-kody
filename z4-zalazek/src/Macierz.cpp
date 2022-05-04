@@ -17,6 +17,21 @@ Macierz Macierz::Transponowanie()
   return Mtemp;
  } 
 
+void Macierz::Zamien(int i, int j)
+ {
+  Macierz Mtemp;
+  
+  Mtemp = *this;
+  
+  this->mtab[i] = Mtemp.mtab[j];
+  this->mtab[j] = Mtemp.mtab[i];
+  
+ }
+
+
+
+
+
 
 
 istream& operator >> (istream &Strm, Macierz &Mac)

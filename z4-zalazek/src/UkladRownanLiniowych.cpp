@@ -5,16 +5,25 @@
  float UkladRownanLiniowych::Gaus (Macierz M)
   {
   
+  bool nparzy = 0;
   
    for (int i=0; i <ROZMIAR+1; ++i){
     for (int j=i+1; j <ROZMIAR; ++j){
-     M.mtab[j] = M.mtab[j] - M.mtab[i] * ( M(j+1,i+1) / M(i+1,i+1) );
+      if (M(i+1,i+1) == 0){
+        M.Zamien(i, j);
+        nparzy =!nparzy;
+      }
+      else{
+        M.mtab[j] = M.mtab[j] - M.mtab[i] * ( M(j+1,i+1) / M(i+1,i+1) );
+      }
      }
     }
     float W = 1;
-     for (int k=1;  k <= ROZMIAR; ++k)
+     for (int k=1;  k <= ROZMIAR; ++k){
        W *= M(k,k);
-       
+     }  
+       if(!nparzy)
+        W *= -1;
        return W;
   } 
 

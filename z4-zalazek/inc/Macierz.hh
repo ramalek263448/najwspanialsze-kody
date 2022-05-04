@@ -14,6 +14,7 @@ class Macierz {
   Wektor mtab [ROZMIAR];
   
   Macierz Transponowanie() ;
+  void Zamien(int, int);
   float operator() (int IndW , int IndK)const { return mtab[IndW - 1][IndK]; }
   float& operator() (int IndW , int IndK) { return mtab[IndW - 1][IndK]; }
 };
